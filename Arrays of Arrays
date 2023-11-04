@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+ int main()
+{
+// Declare a 10x10 array
+const int numRows = 10;
+const int numCols = 10;
+int product[numRows][numCols] = { 0 };
+
+// Calculate the multiplication table
+{for (int row = 0; row < numRows; ++row) {
+  for (int col = 0; col < numCols; ++col) {
+    product[row][col] = row * col;
+  }
+}
+}
+// Store the product in each cell
+
+// Print the multiplication table to the console
+{for (int row = 1; row < numRows; ++row) {
+  for (int col = 1; col < numCols; ++col) {
+    std::cout << product[row][col] << "\t";
+  }
+  std::cout << std::endl;
+}}}
