@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int main() {
+  int multiplication_table[10][10];
+
+  // Initialize the multiplication table to 0
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+      multiplication_table[i][j] = 0;
+    }
+  }
+
+  // Populate the multiplication table
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+      multiplication_table[i][j] = i * j;
+    }
+  }
+
+  // Print the multiplication table
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+      cout << multiplication_table[i][j] << " ";
+      
+    }
+    cout << endl;
+  }
+
+  return 0;
+}
