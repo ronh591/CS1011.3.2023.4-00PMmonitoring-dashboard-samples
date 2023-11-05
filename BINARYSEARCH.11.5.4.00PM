@@ -1,0 +1,64 @@
+#include <iostream>
+#include <random>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+  // Initialize the array with random numbers
+  int array[20];
+  random_device rd;
+  mt19937 gen(rd());
+  uniform_int_distribution<> dis(1, 99);
+
+  for (int i = 0; i < 20; i++) {
+    array[i] = dis(gen);
+  }
+
+  // Display the array
+  cout << "Array: ";
+  for (int i = 0; i < 20; i++) {
+    cout << array[i] << " ";
+  }
+  cout << endl;
+
+  // Sort the array
+  sort(array, array + 20);
+
+  // Get the target number to search for
+  int target;
+  cout << "Enter a number to search for: ";
+  cin >> target;
+
+  // Perform binary search
+  int low = 0;
+  int high = 19;
+  int mid;
+  int index = -1;
+
+  while (low <= high) {
+    mid = (low + high) / 2;
+
+    if (array[mid] == target) {
+      index = mid;
+      break;
+    } else if (array[mid] < target) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
+  }
+
+  // Display the result
+  if (index != -1) {
+    cout << "The number " << target << " was found at index " << index << endl;
+  } else {
+    cout << "The number " << target << " was not found in the array" << endl;
+  }
+
+  return 0;
+}
+/*OUTPUT:Array: 14 8 2 39 81 36 59 36 45 60 90 97 95 79 28 2 94 75 15 31 
+Enter a number to search for: 60
+The number 60 was found at index 12
+ /*
