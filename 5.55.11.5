@@ -1,0 +1,33 @@
+/*what is wrong with this program....#include <iostream>
+#include <vector>
+#include <random>
+#include <string>
+
+using namespace std;
+
+char ticTacToeBoard[3][3]={{'x','x','x'},{'o','o','o'},{'x','x','x'}};
+cout <<ticTacToeBoard << endl;*/
+
+
+#include <iostream>
+#include <vector>
+#include <random>
+#include <string>
+
+using namespace std;
+
+char ticTacToeBoard[3][3] = {{'x','x','x'},{'o','o','o'},{'x','x','x'}};
+
+int main() {
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      cout << ticTacToeBoard[i][j] << " ";
+    }
+    cout << endl;
+  }
+  return 0;
+}
+/*OUTPUT
+x x x 
+o o o 
+x x x */
